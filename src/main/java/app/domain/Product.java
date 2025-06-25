@@ -1,18 +1,23 @@
 package app.domain;
 
+import app.repositories.ProductRepository;
+
 import java.util.Objects;
 
-public class Product {
-    private final Long id;
+public class Product  {
+    private Long id;
     private boolean isActive;
     private String name;
     private Double price;
 
-    public Product(Long id, boolean isActive, String name, Double price) {
-        this.id = id;
+    public Product(boolean isActive, String name, Double price) {
         this.isActive = isActive;
         this.name = name;
         this.price = price;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
