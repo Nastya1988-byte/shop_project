@@ -26,7 +26,7 @@ public class CustomerRepositoryMap implements CustomerRepository {
     }
 
     @Override
-    public Customer findById(Long id) {
+    public Customer findCustomerById(Long id) {
         return database.get(id);
     }
 
@@ -35,7 +35,7 @@ public class CustomerRepositoryMap implements CustomerRepository {
         Long id = customer.getId();
         String newName = customer.getName();
 
-        Customer oldCustomer = findById(id);
+        Customer oldCustomer = findCustomerById(id);
 
         if (oldCustomer != null){
             oldCustomer.setName(newName);
@@ -46,7 +46,7 @@ public class CustomerRepositoryMap implements CustomerRepository {
 
     @Override
     public boolean deleteById(Long id) {
-        Customer oldCustomer = findById(id);
+        Customer oldCustomer = findCustomerById(id);
         if (oldCustomer == null) {
             return false;
         }
