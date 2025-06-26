@@ -1,7 +1,6 @@
 package app.repositories;
 
 import app.domain.Customer;
-import app.domain.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,6 +39,7 @@ public class CustomerRepositoryMap implements CustomerRepository {
 
         if (oldCustomer != null){
             oldCustomer.setName(newName);
+            return oldCustomer;
         }
         return null;
     }
