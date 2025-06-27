@@ -8,8 +8,6 @@ import app.exceptions.CustomerUpdateException;
 import app.exceptions.ProductUpdateException;
 import app.repositories.CustomerRepository;
 import app.repositories.ProductRepository;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -107,9 +105,17 @@ public class CustomerServiceImpl implements CustomerService {
         return 0;//TODO
     }
 
-    Customer customer;
     @Override
     public Product saveCardActive(Long id) {
+//        Product product = productRepository.findById(id);
+//        List<Product> card = new ArrayList<>();
+//       if (product.isActive() == false){
+//           return null;
+//       }if (product.isActive()== true){
+//           card.add(product);
+//        }
+//        return product;
+
         return null;
     }
 
@@ -122,5 +128,6 @@ public class CustomerServiceImpl implements CustomerService {
     public void clearCardActive(Long id) {
 
     }
+
 
 }
