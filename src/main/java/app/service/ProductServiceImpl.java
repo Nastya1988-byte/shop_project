@@ -95,9 +95,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void restoreById(Long id) {
-        getById(id).setActive(true);
 
-    }
+            Product product = repository.findById(id);
+            if (product == null ) {
+                throw new ProductNotFaundExeption("Product with id = " + id + " not found");
+            }
+            product.setActive(true);
+        }
+
 
     @Override
     public long getActiveProductsTotalCount() {
